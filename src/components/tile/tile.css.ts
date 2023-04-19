@@ -9,10 +9,17 @@ export const Card = styled.div`
   width: 40%;
   height: auto;
   background-color: #191919;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     width: 200px;
     height: 300px;
+  }
+
+  &:hover {
+    border-color: #fff;
   }
 `;
 

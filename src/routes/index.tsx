@@ -14,7 +14,7 @@ import { Grid } from './index.css';
 import { GameView } from '~/components/game/game';
 
 export default component$(() => {
-  const DATA: Game[] = sourceData;
+  const DATA: Game[] = sourceData.sort((a, b) => a.Name.localeCompare(b.Name));
   const store = useStore<{ selectedGame: NoSerialize<Game | undefined> }>({
     selectedGame: undefined,
   });
