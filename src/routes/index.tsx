@@ -2,57 +2,54 @@ import {
   component$,
   useStore,
   noSerialize,
-  $,
   type NoSerialize,
-  qrl,
   useSignal,
 } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
+import { DocumentHead, routeLoader$ } from '@builder.io/qwik-city';
 import { TileComponent } from '~/components/tile/tile';
 import { Game } from '~/components/game/game.types';
-import sourceData from '~/data.json';
 import { Grid, NoResults } from './index.css';
 import { GameView } from '~/components/game/game';
 import { FilterComponent } from '~/components/filters/filters';
 
-const DATA: Game[] = sourceData.sort((a, b) => a.Name.localeCompare(b.Name));
+export const useRemoteData = routeLoader$(async () => {
+  // This code runs only on the server, after every navigation
+  const response = await fetch(
+    'https://raw.githubusercontent.com/Matheus7OP/xboxkbm-game-list/main/games.json',
+  );
+  const data: Game[] = await response.json();
+  return data.sort((a, b) => a.Name.localeCompare(b.Name));
+});
 
 export default component$(() => {
   const filterQuery = useSignal('');
+
   const store = useStore<{ selectedGame: NoSerialize<Game | undefined> }>({
     selectedGame: undefined,
   });
 
-  const filteredData = useStore<{ games: NoSerialize<Game[]> }>({
-    games: noSerialize(DATA),
-  });
-
-  const filterGames = $((filter: string) => {
-    filteredData.games = noSerialize(
-      DATA.filter(item =>
-        item.Name.toLowerCase().includes(filter.toLowerCase()),
-      ),
-    );
-  });
+  const data = useRemoteData().value;
 
   return (
     <>
       <FilterComponent
         onFilter$={filter => {
           filterQuery.value = filter;
-          filterGames(filter);
         }}
       />
       <Grid>
-        {filteredData.games?.map(item => (
-          <TileComponent
-            key={item.ImageLink}
-            url={item.ImageLink}
-            onClick$={() => {
-              store.selectedGame = noSerialize<Game>(item);
-            }}
-          />
-        ))}
+        {data.map(item =>
+          filterQuery.value.length === 0 ||
+          item.Name.toLowerCase().includes(filterQuery.value.toLowerCase()) ? (
+            <TileComponent
+              key={item.ImageLink}
+              url={item.ImageLink}
+              onClick$={() => {
+                store.selectedGame = noSerialize<Game>(item);
+              }}
+            />
+          ) : null,
+        )}
         {store.selectedGame && (
           <GameView
             {...store.selectedGame}
@@ -61,7 +58,7 @@ export default component$(() => {
             }}
           />
         )}
-        {filteredData.games?.length === 0 && (
+        {data.length === 0 && (
           <NoResults>Unable to find game '{filterQuery}'</NoResults>
         )}
       </Grid>
