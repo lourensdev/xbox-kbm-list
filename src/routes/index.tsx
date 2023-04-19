@@ -58,7 +58,9 @@ export default component$(() => {
             }}
           />
         )}
-        {data.length === 0 && (
+        {data.filter(item =>
+          item.Name.toLowerCase().includes(filterQuery.value.toLowerCase()),
+        ).length === 0 && (
           <NoResults>Unable to find game '{filterQuery}'</NoResults>
         )}
       </Grid>
