@@ -12,3 +12,8 @@ export const Grid = styled.div`
     padding: 30px;
   }
 `;
+
+export const NoResults = styled.div`
+  opacity: 0.5;
+  font-size: 1.5rem;
+`;

@@ -24,7 +24,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'prefer-spread': 'off',
     'no-case-declarations': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     curly: 'error',
