@@ -27,8 +27,9 @@ export const GameModalClose = styled.div`
   opacity: 0.6;
 
   @media (min-width: 768px) {
+    width: 32px;
     top: 10px;
-    right: 10px;
+    right: 8px;
   }
 
   &:hover {

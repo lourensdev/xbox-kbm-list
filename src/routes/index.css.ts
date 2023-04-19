@@ -5,6 +5,7 @@ export const Grid = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20px 10px;
 
   @media (min-width: 768px) {
     gap: 25px;
