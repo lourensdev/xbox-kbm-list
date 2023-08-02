@@ -6,7 +6,6 @@ export const Card = styled.div`
   justify-content: center;
   border-radius: 8px;
   overflow: hidden;
-  width: calc(50% - 20px);
   height: auto;
   background-color: #191919;
   border: 3px solid transparent;
@@ -14,8 +13,8 @@ export const Card = styled.div`
   cursor: pointer;
 
   @media (max-width: 375px) {
-    width: 200px;
-    height: 300px;
+    width: 150px;
+    height: 225px;
   }
 
   @media (min-width: 375px) {
