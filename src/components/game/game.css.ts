@@ -20,15 +20,16 @@ export const GameDisplayWrapper = styled.div`
 
 export const GameModalClose = styled.div`
   position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 25px;
-  height: 25px;
-  opacity: 0.6;
+  top: 28px;
+  right: 22px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.7;
+  border-radius: 8px;
   cursor: pointer;
+  background-color: var(--background);
 
   @media (min-width: 768px) {
-    width: 32px;
     top: 10px;
     right: 8px;
   }
@@ -41,6 +42,7 @@ export const GameModalClose = styled.div`
   &:after {
     position: absolute;
     left: 15px;
+    margin-top: 3px;
     content: ' ';
     height: 25px;
     width: 2px;
