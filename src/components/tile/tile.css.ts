@@ -4,7 +4,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
   width: calc(50% - 20px);
   height: auto;
@@ -13,7 +13,17 @@ export const Card = styled.div`
   transition: border-color 0.3s ease-in-out;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (max-width: 375px) {
+    width: 200px;
+    height: 300px;
+  }
+
+  @media (min-width: 375px) {
+    width: calc((355px - 50px) / 2);
+    height: calc((355px - 50px) / 2 * 1.5);
+  }
+
+  @media (min-width: 460px) {
     width: 200px;
     height: 300px;
   }
@@ -21,10 +31,4 @@ export const Card = styled.div`
   &:hover {
     border-color: #fff;
   }
-`;
-
-export const Thumbnail = styled.img`
-  object-fit: contain;
-  width: 100%;
-  height: auto;
 `;

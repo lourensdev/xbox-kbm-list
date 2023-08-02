@@ -25,6 +25,7 @@ export const GameModalClose = styled.div`
   width: 25px;
   height: 25px;
   opacity: 0.6;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     width: 32px;
@@ -84,7 +85,7 @@ export const GameModalBody = styled.div`
   margin: 20px;
   line-height: 1.5;
   max-width: 800px;
-  border-radius: 5px;
+  border-radius: 8px;
   z-index: 2;
   animation: animFadeIn 0.3s ease-in-out;
   flex-direction: column;
@@ -127,7 +128,7 @@ export const GamePoster = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
   width: 100%;
   height: auto;

@@ -1,5 +1,6 @@
 import { component$ } from '@builder.io/qwik';
-import { Card, Thumbnail } from './tile.css';
+import { Card } from './tile.css';
+import { Image } from '@unpic/qwik';
 
 export const TileComponent = component$(
   (props: { url: string; onClick$: () => void }) => {
@@ -10,9 +11,9 @@ export const TileComponent = component$(
 
     return (
       <Card onClick$={props.onClick$}>
-        <Thumbnail
-          width="200px"
-          height="300px"
+        <Image
+          aspectRatio={2 / 3}
+          layout="constrained"
           src={adjustImageDimensions(props.url)}
           loading="lazy"
         />
