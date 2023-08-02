@@ -43,6 +43,7 @@ export default component$(() => {
           item.Name.toLowerCase().includes(filterQuery.value.toLowerCase()) ? (
             <TileComponent
               index={index}
+              title={item.Name}
               key={item.ImageLink}
               url={item.ImageLink}
               onClick$={() => {

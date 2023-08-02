@@ -10,9 +10,9 @@ import {
   GamePoster,
   ImageCaption,
   ImageCaptionIcon,
-  Thumbnail,
   Title,
 } from './game.css';
+import { Image } from '@unpic/qwik';
 
 export const GameView = component$((props: Game) => {
   const adjustImageDimensions = (imageLink: string): string => {
@@ -25,11 +25,14 @@ export const GameView = component$((props: Game) => {
       <GameModalBody>
         <GameModalClose onClick$={props.onClose$}></GameModalClose>
         <GamePoster>
-          <Thumbnail
-            width="200px"
-            height="300px"
+          <Image
+            class="g-fit-image"
+            width={200}
+            height={300}
+            priority={true} // Don't lazy load images above the fold for mobile
+            layout="fullWidth"
             src={adjustImageDimensions(props.ImageLink)}
-            loading="lazy"
+            alt={`${props.Name} Cover Art`}
           />
           <ImageCaption>
             <ImageCaptionIcon src="/icons/information.png" />

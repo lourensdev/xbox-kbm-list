@@ -3,7 +3,12 @@ import { Card } from './tile.css';
 import { Image } from '@unpic/qwik';
 
 export const TileComponent = component$(
-  (props: { url: string; index: number; onClick$: () => void }) => {
+  (props: {
+    title: string;
+    url: string;
+    index: number;
+    onClick$: () => void;
+  }) => {
     const adjustImageDimensions = (imageLink: string): string => {
       const imageUrl: string = imageLink.split('?')[0];
       return `${imageUrl}?q=80&w=300&h=450`;
@@ -18,6 +23,7 @@ export const TileComponent = component$(
           priority={props.index < 6} // Don't lazy load images above the fold for mobile
           layout="fullWidth"
           src={adjustImageDimensions(props.url)}
+          alt={`${props.title} Cover Art`}
         />
       </Card>
     );

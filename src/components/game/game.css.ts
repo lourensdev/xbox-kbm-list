@@ -141,16 +141,6 @@ export const GamePoster = styled.div`
   }
 `;
 
-export const Thumbnail = styled.img`
-  object-fit: contain;
-  width: 50%;
-  height: auto;
-
-  @media (min-width: 768px) {
-    width: 100%;
-  }
-`;
-
 export const Title = styled.h2`
   font-size: 1.5rem;
 `;

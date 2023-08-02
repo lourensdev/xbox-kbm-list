@@ -56,7 +56,12 @@ export const FilterComponent = component$(
 
     return (
       <FilterContainer>
-        <Logo src={'/kbm_logo_filled_flat.svg'} />
+        <Logo
+          src={'/kbm_logo_filled_flat.svg'}
+          width={70}
+          height={70}
+          alt={'Xbox KBM Support Logo'}
+        />
         <input
           type="search"
           placeholder="Filter by Game"
