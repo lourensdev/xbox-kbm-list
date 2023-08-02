@@ -38,10 +38,11 @@ export default component$(() => {
         }}
       />
       <Grid>
-        {data.map(item =>
+        {data.map((item: Game, index: number) =>
           filterQuery.value.length === 0 ||
           item.Name.toLowerCase().includes(filterQuery.value.toLowerCase()) ? (
             <TileComponent
+              index={index}
               key={item.ImageLink}
               url={item.ImageLink}
               onClick$={() => {

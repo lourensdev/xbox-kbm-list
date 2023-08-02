@@ -28,9 +28,23 @@ export default component$(() => {
           crossOrigin="anonymous"
         />
         <link
+          rel="preload"
+          as="style"
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+          onLoad$={(event: Event, element: HTMLLinkElement) => {
+            element.media = 'all';
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+          />
+        </noscript>
         <RouterHead />
       </head>
       <body lang="en">
