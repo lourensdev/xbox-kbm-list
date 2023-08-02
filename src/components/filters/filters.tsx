@@ -4,7 +4,7 @@ import {
   useVisibleTask$,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import { FilterContainer } from './filters.css';
+import { FilterContainer, Logo } from './filters.css';
 
 export const FilterComponent = component$(
   (props: { onFilter$: (filter: string) => void }) => {
@@ -21,7 +21,7 @@ export const FilterComponent = component$(
         border-radius: 50px;
         box-sizing: border-box;
         color: #fff;
-        background-color: transparent;
+        background-color: var(--background-transparent);
         width: 100%;
         padding: 15px 20px;
         font-size: 1.2em;
@@ -56,6 +56,7 @@ export const FilterComponent = component$(
 
     return (
       <FilterContainer>
+        <Logo src={'/kbm_logo_filled_flat.svg'} />
         <input
           type="search"
           placeholder="Filter by Game"

@@ -1,3 +1,8 @@
+:root {
+  --background: #090909;
+  --background-transparent: rgba(9, 9, 9, 0.9);
+}
+
 /* Document
    ========================================================================== */
 
@@ -20,7 +25,7 @@
 
 body {
   margin: 0;
-  background-color: #090909;
+  background-color: var(--background);
   color: #FFF;
   font-family: 'Open Sans', sans-serif;
 }
