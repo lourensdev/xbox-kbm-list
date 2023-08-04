@@ -11,6 +11,7 @@ import { Game } from '~/components/game/game.types';
 import { Grid, NoResults } from './index.css';
 import { GameView } from '~/components/game/game';
 import { FilterComponent } from '~/components/filters/filters';
+import { CreditComponent } from '~/components/credits/credits';
 
 export const useRemoteData = routeLoader$(async () => {
   // This code runs only on the server, after every navigation
@@ -66,6 +67,7 @@ export default component$(() => {
           <NoResults>Unable to find game '{filterQuery}'</NoResults>
         )}
       </Grid>
+      <CreditComponent />
     </>
   );
 });

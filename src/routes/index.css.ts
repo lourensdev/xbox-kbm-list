@@ -5,11 +5,11 @@ export const Grid = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px 10px;
+  padding: 20px 10px 80px;
 
   @media (min-width: 768px) {
     gap: 25px;
-    padding: 30px;
+    padding: 30px 30px 100px;
   }
 `;
 
