@@ -45,6 +45,7 @@ export default component$(() => {
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
           />
         </noscript>
+        <meta name="theme-color" content="#090909" />
         <RouterHead />
       </head>
       <body lang="en">
