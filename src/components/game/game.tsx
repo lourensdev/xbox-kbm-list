@@ -30,7 +30,8 @@ export const GameView = component$((props: Game) => {
             class="g-fit-image"
             width={200}
             height={300}
-            priority={true} // Don't lazy load images above the fold for mobile
+            decoding="async"
+            loading="lazy"
             layout="fullWidth"
             src={adjustImageDimensions(props.ImageLink)}
             alt={`${props.Name} Cover Art`}
