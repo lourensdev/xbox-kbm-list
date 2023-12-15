@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { Card } from './tile.css';
 import { Image } from '@unpic/qwik';
+import { rewriteImageUrl } from '~/utils';
 
 export const TileComponent = component$(
   (props: {
@@ -11,12 +12,7 @@ export const TileComponent = component$(
   }) => {
     const adjustImageDimensions = (imageLink: string): string => {
       const imageUrl: string = imageLink.split('?')[0];
-      const imageKitBaseUrl: string = 'https://ik.imagekit.io/3zvdo2d3a/';
-      const xboxStoreBaseUrl: string = 'https://store-images.s-microsoft.com/';
-      return `${imageUrl.replace(
-        xboxStoreBaseUrl,
-        imageKitBaseUrl,
-      )}?tr=w-300,h-450`;
+      return rewriteImageUrl(imageUrl, 300, 450);
     };
 
     return (

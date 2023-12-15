@@ -13,11 +13,12 @@ import {
   Title,
 } from './game.css';
 import { Image } from '@unpic/qwik';
+import { rewriteImageUrl } from '~/utils';
 
 export const GameView = component$((props: Game) => {
   const adjustImageDimensions = (imageLink: string): string => {
     const imageUrl: string = imageLink.split('?')[0];
-    return `${imageUrl}?q=100&w=300&h=450`;
+    return rewriteImageUrl(imageUrl, 300, 450);
   };
 
   return (
