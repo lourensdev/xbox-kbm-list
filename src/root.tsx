@@ -29,6 +29,11 @@ export default component$(() => {
           crossOrigin="anonymous"
         />
         <link
+          rel="preconnect"
+          href="https://ik.imagekit.io/"
+          crossOrigin="anonymous"
+        />
+        <link
           rel="preload"
           as="style"
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
