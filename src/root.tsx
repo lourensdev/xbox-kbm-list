@@ -7,6 +7,7 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
+import { QwikPartytown } from './components/partytown/partytown';
 
 export default component$(() => {
   /**
@@ -47,6 +48,20 @@ export default component$(() => {
         </noscript>
         <meta name="theme-color" content="#090909" />
         <RouterHead />
+        <QwikPartytown forward={['dataLayer.push']} />
+        <script
+          async
+          type="text/partytown"
+          src="https://www.googletagmanager.com/gtag/js?id=G-6JMX20N36D"
+        />
+        <script
+          type="text/partytown"
+          dangerouslySetInnerHTML={`window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+             gtag('config', 'G-6JMX20N36D');`}
+        />
       </head>
       <body lang="en">
         <RouterOutlet />

@@ -11,7 +11,12 @@ export const TileComponent = component$(
   }) => {
     const adjustImageDimensions = (imageLink: string): string => {
       const imageUrl: string = imageLink.split('?')[0];
-      return `${imageUrl}?q=80&w=300&h=450`;
+      const imageKitBaseUrl: string = 'https://ik.imagekit.io/3zvdo2d3a/';
+      const xboxStoreBaseUrl: string = 'https://store-images.s-microsoft.com/';
+      return `${imageUrl.replace(
+        xboxStoreBaseUrl,
+        imageKitBaseUrl,
+      )}?tr=w-300,h-450`;
     };
 
     return (
