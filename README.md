@@ -1,14 +1,13 @@
 # XBox keyboard & mouse supported games ⚡️
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Frontend](https://xbox-kbm-support.vercel.app/)
+![Website Preview](https://github.com/lourensdev/xbox-kbm-list/blob/main/preview.jpg?raw=true)
+
 - [Data Source](https://github.com/Matheus7OP/xboxkbm-game-list)
+- [Qwik Docs](https://qwik.builder.io/)
 
 ---
 
 ## 🚀 Website
-
-![Website Preview](https://github.com/lourensdev/xbox-kbm-list/blob/main/preview.jpg?raw=true)
 
 To view the site, visit [https://xbox-kbm-support.vercel.app/](https://xbox-kbm-support.vercel.app/).
 
